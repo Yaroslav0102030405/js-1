@@ -1,0 +1,5 @@
+{
+  "prettier.enable": true,
+  "prettier.requireConfig": false,
+  "prettier.embeddedLanguageFormatting": "auto"
+}
