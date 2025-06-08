@@ -102,3 +102,31 @@ const addressUkraine = createAddress('Україна');
 const addressPoland = createAddress('Польща');
 console.log(addressUkraine('Ярослав'));
 console.log(addressPoland('Паша'));
+
+const counter = {
+  value: 0,
+  decrement() {
+    this.value += 1;
+  },
+  increment() {
+    this.value -= 1;
+  },
+};
+
+const refs = {
+  value: document.querySelector('.js-value'),
+  decrement: document.querySelector('.js-decrement'),
+  increment: document.querySelector('.js-increment'),
+};
+
+refs.decrement.addEventListener('click', function () {
+  counter.decrement();
+
+  refs.value.textContent = counter.value;
+});
+
+refs.increment.addEventListener('click', function () {
+  counter.increment();
+
+  refs.value.textContent = counter.value;
+});
