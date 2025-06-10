@@ -31,3 +31,30 @@
 
   transition: transform 0.3s linear;
 }
+
+.btn-active {
+  background-color: aqua;
+}
+
+.js-palette {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.li {
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 6px;
+  background-color: aliceblue;
+  transform: translate 250ms linear;
+}
+
+.div {
+  width: 300px;
+  height: 200px;
+}
+
+.li.is-active {
+  transform: perspective(400px) rotateX(10deg);
+}
