@@ -24,3 +24,42 @@ try {
 } catch (error) {
   console.log(error.message);
 }
+
+const STORAGE_KEY = 'userMessage';
+const formData = {};
+
+const formRef = document.querySelector('.js-form-3');
+const inputRef = document.querySelector('.js-form-3 input');
+const textareaRef = document.querySelector('.js-form-3 textarea');
+
+formRef.addEventListener('submit', hahdleFormSubmit);
+formRef.addEventListener('input', onFormInput);
+
+function onFormInput(event) {
+  formData[event.target.name] = event.target.value;
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+}
+
+populateTextarea();
+
+function hahdleFormSubmit(event) {
+  event.preventDefault();
+
+  event.currentTarget.reset();
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+function populateTextarea() {
+  const saveMessage = localStorage.getItem(STORAGE_KEY);
+
+  if (saveMessage) {
+    try {
+      const userParse = JSON.parse(saveMessage);
+      inputRef.value = userParse.name;
+      textareaRef.value = userParse.message;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+}
