@@ -1,0 +1,13 @@
+<h1>Товари</h1>
+<h2>Все для дому</h2>
+
+<ul>
+  {{#each products}}
+    <li>
+      <a href='/products/{{id}}'>
+        <img src='{{image}}' alt='{{name}}' />
+        <h3>{{name}}</h3>
+      </a>
+    </li>
+  {{/each}}
+</ul>
