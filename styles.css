@@ -58,3 +58,11 @@
 .li.is-active {
   transform: perspective(400px) rotateX(10deg);
 }
+
+.js-btn-5 {
+  display: none;
+}
+
+.hidden {
+  display: block;
+}
