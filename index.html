@@ -9,7 +9,18 @@
   <body>
     <h1>Hello!</h1>
 
-    <button class="button-js" data-action="нажать">Кнопка</button>
+    <button
+      class="button-js"
+      onmousedown="mouseclick.play()"
+      data-action="нажать"
+    >
+      <audio
+        class="js-audio"
+        src="./audio/audio-2.mp3"
+        type="audio/mp3"
+      ></audio>
+      Кнопка
+    </button>
 
     <div class="counter" style="display: flex">
       <button class="js-decrement">-</button>
@@ -103,5 +114,17 @@
     <!-- <script src="./lesson-24.js" type="module"></script> -->
     <!-- <script src="./lesson-25.js" type="module"></script> -->
     <script src="./lesson-26.js" type="module"></script>
+
+    <script>
+      let mouseclick = new Audio();
+      mouseclick.src = './audio/audio-3.mp3';
+
+      // const audio = document.querySelector('.button-js');
+      // const btn = document.querySelector('.js-audio');
+
+      // audio.addEventListener('click', () => {
+      //   btn.play();
+      // });
+    </script>
   </body>
 </html>
